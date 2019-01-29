@@ -23,8 +23,16 @@ public class ProductHandler {
 	}
 	
 	public static ArrayList<Product> resultSetToProducts(ResultSet rs) throws SQLException{
-		ArrayList<Product> products = new ArrayList<>();
+		ArrayList<Product> products = new ArrayList<Product>();
 		
+		while(rs.next()){
+			Product p = new Product(rs.getInt("Id"),
+						rs.getString("Name"),
+						rs.getString("Description"),
+						rs.getInt("priceInPence")
+					);
+			products.add(p);		
+		}
 		return products;
 	
 	}
