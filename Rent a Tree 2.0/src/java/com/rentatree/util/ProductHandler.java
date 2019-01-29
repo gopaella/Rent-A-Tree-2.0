@@ -6,27 +6,37 @@
 package com.rentatree.util;
 
 import com.rentatree.model.Product;
+import java.sql.PreparedStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
  *
- * @author cuba
+ * @author Alan
  */
 public class ProductHandler {
+    private DBConnector dbc;
+    private Connection connection;
     
-    public static ArrayList<Product> getProducts() throws SQLException {
-		
-		return new ArrayList<>();
-		
-	}
-	
-	public static ArrayList<Product> resultSetToProducts(ResultSet rs) throws SQLException{
-		ArrayList<Product> products = new ArrayList<>();
-		
-		return products;
-	
-	}
+    public ProductHandler(){
+        dbc = new DBConnector("admin", "admin", "host");
+    }
     
+    public ArrayList<Product> getProducts() throws SQLException {
+        dbc.connect();
+        connection = dbc.getConnection();
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM Products");
+        ResultSet rs = dbc.executeSQL(ps);
+        
+	return resultSetToProducts(rs);		
+    }
+	
+    public ArrayList<Product> resultSetToProducts(ResultSet rs) throws SQLException{
+        ArrayList<Product> products = new ArrayList<>();
+        
+	return products;
+	
+    }
 }
