@@ -28,8 +28,8 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>Product Id</th>
                   <th>Name</th>
+                  <th>Description</th>
                   <th>Description</th>
                   <th>Price</th>
                   <th>Quantity</th>

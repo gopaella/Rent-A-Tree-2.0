@@ -17,23 +17,19 @@ import java.util.ArrayList;
 public class ProductHandler {
     
     public static ArrayList<Product> getProducts() throws SQLException {
+        
+                ArrayList<Product> testProducts = new ArrayList<>();
+                
+                testProducts.add(new Product(0, "Tree", "A tree of sorts", "£15", "Cuba's Trees"));
 		
-		return new ArrayList<>();
+		return testProducts;
 		
 	}
 	
 	public static ArrayList<Product> resultSetToProducts(ResultSet rs) throws SQLException{
-		ArrayList<Product> products = new ArrayList<Product>();
+		ArrayList<Product> products = new ArrayList<>();
 		
-		while(rs.next()){
-                    //TO-DO - Fix issues with product build
-			Product p = new Product(rs.getInt("Id"),
-						rs.getString("Name"),
-						rs.getString("Description"),
-						rs.getInt("priceInPence")
-					);
-			products.add(p);		
-		}
+		
 		return products;
 	
 	}
