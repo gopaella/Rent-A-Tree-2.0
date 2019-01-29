@@ -16,6 +16,8 @@ public class Product {
     private String description;
     private String supplier;
     private String pricePerDay;
+    
+    private Material myMat;
 
     public Product(int id, String name, String description, String supplier, String pricePerDay) {
         this.id = id;
@@ -70,6 +72,8 @@ public class Product {
         return "Product{" + "name=" + name + ", description=" + description + ", supplier=" + supplier + ", pricePerDay=" + pricePerDay + '}';
     }
     
-    
+    enum Material{
+        Natural, PVC, PE;
+    }
     
 }

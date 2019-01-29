@@ -15,11 +15,10 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.jsp">Home</a></li>
             <li><a href="products.jsp">Products</a></li>
-            <li><a href="ProductList">Same products</a></li>
             <li><a href="basket.jsp">Basket</a></li>
           </ul>
           <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="What could this be?">
+            <input type="text" class="form-control" placeholder="Search for a tree">
           </form>
         </div>
       </div>

@@ -7,7 +7,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
 <link href="css/style.css" rel="stylesheet" >
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Project example</title>
+<title>Welcome Page</title>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
      
     <div class="jumbotron">
       <div class="container">
-        <h1 class="display-3">Project example</h1>
+        <h1 class="display-3">Rent A Tree</h1>
         <p>An example of a styled page or two which interacts with a database and utilises a Java model to facilitate this.</p>
         <p>This DOES NOT claim to be the best way to structure code, nor does it aim to demonstrate all things that will help you (e.g. there's little templating so a change to the structure of one page can require a change to all of them).</p>
         <p>Think about what's here, what is similar to what you need, and what is missing. Think, too, about what could be improved: what's making your life difficult?</p>
