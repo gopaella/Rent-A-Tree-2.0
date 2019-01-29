@@ -26,6 +26,7 @@ public class ProductHandler {
 		ArrayList<Product> products = new ArrayList<Product>();
 		
 		while(rs.next()){
+                    //TO-DO - Fix issues with product build
 			Product p = new Product(rs.getInt("Id"),
 						rs.getString("Name"),
 						rs.getString("Description"),
