@@ -6,6 +6,8 @@
 <head>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
 <link href="css/style.css" rel="stylesheet" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Welcome Page</title>
 </head>
@@ -17,12 +19,12 @@
     <!-- Main jumbotron -->
      
     <div class="jumbotron">
-      <div class="container">
+      <div class="jumbotron-text-center">
         <h1 class="display-3">Rent A Tree</h1>
-        <p>An example of a styled page or two which interacts with a database and utilises a Java model to facilitate this.</p>
-        <p>This DOES NOT claim to be the best way to structure code, nor does it aim to demonstrate all things that will help you (e.g. there's little templating so a change to the structure of one page can require a change to all of them).</p>
-        <p>Think about what's here, what is similar to what you need, and what is missing. Think, too, about what could be improved: what's making your life difficult?</p>
-        <p>Styling: This is (almost) plain Bootstrap. You don't have to use the default colours/layouts; you don't have to use Bootstrap at all.</p>
+        <p>Eco-Friendly Tree Rental Made Easy</p>
+        <div class="button-center">
+            <button type="button" href="products.jsp">See Our Range</button>
+        </div>
       </div>
     </div>
 
