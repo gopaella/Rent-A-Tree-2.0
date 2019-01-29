@@ -16,6 +16,8 @@
             <li><a href="index.jsp">Home</a></li>
             <li><a href="products.jsp">Products</a></li>
             <li><a href="basket.jsp">Basket</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Register</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search for a tree">
