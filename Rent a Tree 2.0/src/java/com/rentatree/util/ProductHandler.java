@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -17,29 +18,24 @@ import java.util.ArrayList;
  * @author Alan
  */
 public class ProductHandler {
-    private DBConnector dbc;
-    private Connection connection;
+    private static DBConnector dbc;
     
     public ProductHandler(){
         dbc = new DBConnector("admin", "admin", "host");
     }
     
-    public ArrayList<Product> getProducts() throws SQLException {
-        dbc.connect();
-        connection = dbc.getConnection();
-        PreparedStatement ps = connection.prepareStatement("SELECT * FROM Products");
-        ResultSet rs = dbc.executeSQL(ps);
-        
+    public static ArrayList<Product> getProducts() throws SQLException {
+        String st = "SELECT * FROM Product";
+        ResultSet rs = dbc.executeSQL(st);
 	return resultSetToProducts(rs);		
     }
 	
-    public ArrayList<Product> resultSetToProducts(ResultSet rs) throws SQLException{
+    public static ArrayList<Product> resultSetToProducts(ResultSet rs) throws SQLException{
         ArrayList<Product> products = new ArrayList<>();
         while(rs.next()){
             Product newProduct = new Product(rs.getInt("Id"), rs.getString("Name"), rs.getString("Description"), rs.getString("Supplier"), rs.getString("PricePerDay"));
             products.add(newProduct);
         }
 	return products;
-	
     }
 }
