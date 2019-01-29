@@ -35,7 +35,10 @@ public class ProductHandler {
 	
     public ArrayList<Product> resultSetToProducts(ResultSet rs) throws SQLException{
         ArrayList<Product> products = new ArrayList<>();
-        
+        while(rs.next()){
+            Product newProduct = new Product(rs.getInt("Id"), rs.getString("Name"), rs.getString("Description"), rs.getString("Supplier"), rs.getString("PricePerDay"));
+            products.add(newProduct);
+        }
 	return products;
 	
     }
