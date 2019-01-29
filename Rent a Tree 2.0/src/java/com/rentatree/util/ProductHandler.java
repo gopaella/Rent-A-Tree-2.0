@@ -6,8 +6,6 @@
 package com.rentatree.util;
 
 import com.rentatree.model.Product;
-import java.sql.PreparedStatement;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -18,20 +16,15 @@ import java.util.ArrayList;
  */
 public class ProductHandler {
     private static DBConnector dbc;
-    private static Connection connection;
     
     public ProductHandler(){
         dbc = new DBConnector("admin", "admin", "host");
     }
     
     public static ArrayList<Product> getProducts() throws SQLException {
-        //dbc.connect();
-        //connection = dbc.getConnection();
-        //PreparedStatement ps = connection.prepareStatement("SELECT * FROM Products");
-        //ResultSet rs = dbc.executeSQL(ps);
-        
-	//return resultSetToProducts(rs);
-        return new ArrayList<>();
+        String st = "SELECT * FROM Product";
+        ResultSet rs = dbc.executeSQL(st);
+	return resultSetToProducts(rs);		
     }
 	
     public static ArrayList<Product> resultSetToProducts(ResultSet rs) throws SQLException{
@@ -41,6 +34,5 @@ public class ProductHandler {
             products.add(newProduct);
         }
 	return products;
-	
     }
 }
