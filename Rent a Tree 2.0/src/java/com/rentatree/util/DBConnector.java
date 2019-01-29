@@ -5,6 +5,7 @@ package com.rentatree.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -15,7 +16,7 @@ import java.sql.Statement;
  *
  */
 public class DBConnector {
-	private Connection connection;
+	private static Connection connection;
 	private String user;
 	private String password;
 	private String host;
@@ -36,6 +37,24 @@ public class DBConnector {
 			System.exit(0);
 		}	
 	}
+        
+        public static ResultSet executeSQL(String sql) {
+		ResultSet results = null;
+		
+		if(sql == null) {
+			return null;
+		}
+		
+		try {
+			PreparedStatement ps = DBConnector.getConnection().prepareStatement(sql);
+			results = PreparedStatement.executeQuery(sql);
+		} catch (SQLException e) {
+			System.err.println(sql + " " + e.getMessage());
+			e.printStackTrace();
+		}
+		return results;
+	}
+        
 	
 	public void connect() {
 		try {
@@ -57,6 +76,10 @@ public class DBConnector {
 			e.printStackTrace();
 		}
 	}
+        
+        public static Connection getConnection(){
+            return connection;
+        }
 
     public void tryLogin(){
             
