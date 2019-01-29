@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF8" pageEncoding="UTF8"%>
-<%@ page import ="model.Product" %>
+<%@ page import ="com.rentatree.model.Product" %>
 <%@ page import ="java.util.ArrayList" %>
-<%@ page import ="util.ProductHandler" %>
+<%@ page import ="com.rentatree.util.ProductHandler" %>
 
 <%-- This is NOT used by products.jsp but IS used by the ProductList servlet.  It's a different way to show your products (you only want to use one!) 
 	A better system here would split out the page header and footer (etc.) into separate JSP files, all within WEB-INF (so none can be accessed directly

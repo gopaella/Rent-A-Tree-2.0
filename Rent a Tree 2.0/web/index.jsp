@@ -34,7 +34,7 @@
         <div class="col-md-2">
           <h2>Products</h2>
           <p>See a list of products. </p>
-          <p><a class="btn btn-secondary" href="products.jsp" role="button">View Products Now &raquo;</a></p>
+          <p><a class="btn btn-secondary" href="Products" role="button">View Products Now &raquo;</a></p>
         </div>
         <div class="col-md-8">
             <div class="text-center">
