@@ -18,7 +18,29 @@
             <div class="col-md-10">
                 <h3>Your Shopping Cart:</h3>
                 <hr>
+                <div class="list-group">
+                    
+                    <li class="list-group-item">
+                        <h4>An Example Item</h4>
+                        <p>An example item that the user might have in their basket</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h4>An Example Item</h4>
+                        <p>An example item that the user might have in their basket</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h4>An Example Item</h4>
+                        <p>An example item that the user might have in their basket</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h4>An Example Item</h4>
+                        <p>An example item that the user might have in their basket</p>
+                    </li>
+
+                </div>
                 
+                <button type="button" class="btn btn-success">Checkout</button>
+
             </div>
 
             <div class="col-sm-2 sidenav">
@@ -34,8 +56,8 @@
                 </div>
             </div>
         </div>
-        
-       
+
+
 
     </body>
 </html>
