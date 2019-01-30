@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 
 @WebServlet("/trylogin")
 public class UserLoginService extends HttpServlet {
-    DBConnector dbc = new DBConnector("SYS AS SYSDBA", "GoCo19", "jdbc:oracle:thin:@localhost:1521:orcl");
+    DBConnector dbc = new DBConnector("SYS AS SYSDBA", "", "jdbc:oracle:thin:@localhost:1521:orcl");
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String email = request.getParameter("email");
@@ -42,6 +42,10 @@ public class UserLoginService extends HttpServlet {
             rs.next();
             if(rs.getString("Email").equals(email) && rs.getString("UserPassword").equals(password)) {
                 System.out.println("User Success");
+                request.setAttribute("products", new ArrayList<>());
+		// ... then forward the request to a JSP 'hidden' inside WEB_INF (so, can't be accessed directly by the user)
+		RequestDispatcher rd = request.getRequestDispatcher("products.jsp");
+		rd.forward(request, response);
             } else {
                 System.out.println("User Fail");
             }
