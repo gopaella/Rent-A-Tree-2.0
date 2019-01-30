@@ -24,7 +24,7 @@ import javax.ws.rs.core.Response;
  * @author cuba
  */
 
-@WebServlet("/Products")
+@WebServlet("/ProductSearch")
 public class ProductListService extends HttpServlet {
     
     public ProductListService() {
@@ -34,6 +34,10 @@ public class ProductListService extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Generate list of products; hand over to a JSP page to display them.
 		// We can get any parameters we need from the request (we don't need/use any at the moment).
+                
+                //A bunch of strings
+                String minSize = request.getParameter("minSize");
+                
 		ArrayList<Product> products = new ArrayList<Product>();
 		try {
 			products = ProductHandler.getProducts();

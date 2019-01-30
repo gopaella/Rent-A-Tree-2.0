@@ -21,7 +21,7 @@ import com.rentatree.util.DBConnector;
  * @author cuba
  */
 
-@WebServlet("trylogin")
+@WebServlet("/trylogin")
 public class UserLoginService extends HttpServlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,7 +29,8 @@ public class UserLoginService extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         
-        //String sql = "SELECT "
+        String sql = "SELECT Email, UserPassword FROM Customer WHERE Email = " + email + " AND UserPassword = " + password;
+        
         
     }
 
