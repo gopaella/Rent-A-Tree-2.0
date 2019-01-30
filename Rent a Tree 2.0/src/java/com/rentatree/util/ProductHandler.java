@@ -28,7 +28,13 @@ public class ProductHandler {
         
         ArrayList<Product> products = new ArrayList<>();
         products.add(new Product(0, "Lifelike Synthetic Spruce", "A lifelike synthetic spruce tree made from sustainabe PVC plastic", "Cuba's Trees", "£12.50"));
+                products.add(new Product(0, "Lifelike Synthetic Spruce", "A lifelike synthetic spruce tree made from sustainabe PVC plastic", "Cuba's Trees", "£12.50"));
         
+        products.add(new Product(0, "Lifelike Synthetic Spruce", "A lifelike synthetic spruce tree made from sustainabe PVC plastic", "Cuba's Trees", "£12.50"));
+        
+        products.add(new Product(0, "Lifelike Synthetic Spruce", "A lifelike synthetic spruce tree made from sustainabe PVC plastic", "Cuba's Trees", "£12.50"));
+        
+
         return products;
         
     }

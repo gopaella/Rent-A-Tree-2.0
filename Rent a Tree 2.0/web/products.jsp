@@ -23,9 +23,17 @@
     <div class="row-eq-height">
         <div class="col-sm-2 sidenav">
             <h4>Narrow Your Search:</h4>
-            <p>Size setting</p>
-            <p>Material setting</p>
-            <p>Supplier setting</p>
+            <div class="text-center">
+                <p>Size setting</p>
+                <hr>
+                <p>Materials</p>
+                <ul>
+                    
+                </ul>
+                <hr>
+                <p>Supplier setting</p>
+                <hr>
+            </div>
         </div>
         <div class="col-sm-8 text-center">
             <h1>Products</h1>
@@ -38,18 +46,7 @@
             if(products.size() > 0) {
                 for(Product p : products) {              	
             %>
-                <tr class="prod p<%= p.getId() %>">
-                	
-                <td><%= p.getName() %></td>
-                <td><%= p.getDescription() %></td>
-                <td><%= p.getSupplier() %></td>
-                <td><%= p.getPricePerDay() %></td>
-                <td><form class="form-horizontal"  action="/ProjectStarterCode/AddToBasket" method="get">
-                    <input type="text" name="qty" value="0" class="col-xs-2"></input>
-                    <input type="hidden" name="pid" value="<%= p.getId() %>" ><button type="submit" >Purchase</button>
-                </form>	
-                </td>	
-                </tr>
+                
             <%
             }
             } else {

@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/cuba/Documents/Rent-A-Tree-2.0/Rent%20a%20Tree%202.0/web/products.jsp</file>
+            <file>file:/C:/Users/cuba/Documents/Rent-A-Tree-2.0/Rent%20a%20Tree%202.0/src/java/com/rentatree/util/DBConnector.java</file>
+            <file>file:/C:/Users/cuba/Documents/Rent-A-Tree-2.0/Rent%20a%20Tree%202.0/web/basket.jsp</file>
             <file>file:/C:/Users/cuba/Documents/Rent-A-Tree-2.0/Rent%20a%20Tree%202.0/web/WEB-INF/jsp/navbar.jsp</file>
+            <file>file:/C:/Users/cuba/Documents/Rent-A-Tree-2.0/Rent%20a%20Tree%202.0/src/java/com/rentatree/model/Product.java</file>
+            <file>file:/C:/Users/cuba/Documents/Rent-A-Tree-2.0/Rent%20a%20Tree%202.0/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/cuba/Documents/Rent-A-Tree-2.0/Rent%20a%20Tree%202.0/src/java/com/rentatree/util/ProductHandler.java</file>
+            <file>file:/C:/Users/cuba/Documents/Rent-A-Tree-2.0/Rent%20a%20Tree%202.0/src/java/com/rentatree/service/ProductListService.java</file>
             <file>file:/C:/Users/cuba/Documents/Rent-A-Tree-2.0/Rent%20a%20Tree%202.0/web/index.jsp</file>
             <file>file:/C:/Users/cuba/Documents/Rent-A-Tree-2.0/Rent%20a%20Tree%202.0/web/css/style.css</file>
         </group>
