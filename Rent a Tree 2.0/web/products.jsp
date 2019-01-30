@@ -43,7 +43,7 @@
             <%
             // List of Products
             ArrayList<Product> products = (ArrayList) request.getAttribute("products");
-            if(products.size() > 0) {
+            if(products.size() > 0 && products != null) {
                 for(Product p : products) {              	
             %>
                 
