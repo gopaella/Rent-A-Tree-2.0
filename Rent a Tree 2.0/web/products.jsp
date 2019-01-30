@@ -25,14 +25,32 @@
             <h4>Narrow Your Search:</h4>
             <div class="text-center">
                 <p>Size setting</p>
+                
+                <form>
+                    <div class="form-group">
+                        <label for="minSize">Minimum Tree Size</label>
+                        <input type="text" class="form-control" id="minSize" placeholder="50cm">
+                        
+                        <label for="maxSize">Maximum Tree Size</label>
+                        <input type="text" class="form-control" id="maxSize" placeholder="200cm">
+                    </div>
+                </form>
+                
                 <hr>
                 <p>Materials</p>
-                <ul>
-                    
-                </ul>
+                
+                <form>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="nat">
+                        <label class="form-check-label" for="mat1">Natural</label>
+                    </div>
+                </form>
+                
                 <hr>
                 <p>Supplier setting</p>
                 <hr>
+                
+                <button type="button-center" class="btn btn-success">Search</button>
             </div>
         </div>
         <div class="col-sm-8 text-center">
