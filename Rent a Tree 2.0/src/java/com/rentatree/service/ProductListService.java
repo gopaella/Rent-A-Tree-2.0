@@ -39,7 +39,8 @@ public class ProductListService extends HttpServlet {
 			products = ProductHandler.getProducts();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+                        System.out.println("Something Broke");
 		}
 		
 		

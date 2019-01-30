@@ -24,7 +24,7 @@ public class ProductHandler {
     public static ArrayList<Product> getProducts() throws SQLException {
         String st = "SELECT * FROM Product";
         ResultSet rs = dbc.executeSQL(st);
-	return resultSetToProducts(rs);	
+	return resultSetToProducts(rs);
     }
 	
     
