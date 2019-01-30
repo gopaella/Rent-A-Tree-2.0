@@ -23,7 +23,7 @@
         <h1 class="display-3">Rent A Tree</h1>
         <p>Eco-Friendly Tree Rental Made Easy</p>
         <div class="button-center">
-            <p><a class="btn btn-secondary" href="products.jsp" role="button">See Our Range</a></p>
+            <p><a class="btn btn-secondary" href="Products" role="button">See Our Range</a></p>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
                           <h2>Product Of The Day</h2>
           <p>Product of the day goes here</p>
           <p>Grab it while you can</p>
-          <p><a class="btn btn-secondary" href="ProductList" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
 
             </div>
        </div>
