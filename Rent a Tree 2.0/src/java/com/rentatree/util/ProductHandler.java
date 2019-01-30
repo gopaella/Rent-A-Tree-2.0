@@ -21,20 +21,26 @@ public class ProductHandler {
         dbc = new DBConnector("admin", "admin", "host");
     }
     
-    public static ArrayList<Product> getProducts() throws SQLException {
+    public static ArrayList<Product> getProducts() throws SQLException{
         String st = "SELECT * FROM Product";
         ResultSet rs = dbc.executeSQL(st);
-	return resultSetToProducts(rs);	
+        return resultSetToProducts(rs);
     }
 	
-    
-    
-    public static ArrayList<Product> resultSetToProducts(ResultSet rs) throws SQLException{
+    public static ArrayList<Product> getProductsSortBy(){
+        return null;
+    }
+    public static ArrayList<Product> resultSetToProducts(ResultSet rs){
         ArrayList<Product> products = new ArrayList<>();
-        while(rs.next()){
+        try{
+            while(rs.next()){
             Product newProduct = new Product(rs.getInt("Id"), rs.getString("Name"), rs.getString("Description"), rs.getString("Supplier"), rs.getString("PricePerDay"));
             products.add(newProduct);
+            return products;
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
         }
-	return products;
+        return null;
     }
 }
