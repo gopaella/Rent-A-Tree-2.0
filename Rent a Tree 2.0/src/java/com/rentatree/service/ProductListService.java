@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.rentatree.util.ProductHandler;
 import com.rentatree.model.Product;
 import javax.servlet.http.HttpServlet;
+import javax.ws.rs.core.Response;
 
 /**
  *
