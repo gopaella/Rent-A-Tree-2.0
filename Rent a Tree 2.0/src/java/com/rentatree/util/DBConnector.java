@@ -78,14 +78,14 @@ public class DBConnector {
             try{
                 connect();
                 PreparedStatement ps = connection.prepareStatement(sql);
-                rs = ps.executeQuery(sql);
+                return executePreparedSQL(ps);
             }catch(SQLException ex){
                 System.err.println("SQL Exception with statement: " + sql);
                 ex.printStackTrace();
             }finally{
                 closeConnection();
             }
-            return rs;
+            return null;
         }
         
     	public static void closeConnection() {
