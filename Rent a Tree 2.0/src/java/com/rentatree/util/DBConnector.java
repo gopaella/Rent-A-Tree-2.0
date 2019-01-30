@@ -15,9 +15,9 @@ import java.sql.SQLException;
  */
 public class DBConnector {
 	private static Connection connection;
-	private String user;
-	private String password;
-	private String host;
+	private static String user;
+	private static String password;
+	private static  String host;
 		
 	public DBConnector(String user, String password, String host) {
 		connection = null;
@@ -36,7 +36,7 @@ public class DBConnector {
 		}	
 	}
 	
-	public void connect() {
+	public static void connect() {
 		try {
 			connection = DriverManager.getConnection(host, user, password);
 		} catch (SQLException exp) {
@@ -51,6 +51,24 @@ public class DBConnector {
             return connection;
         }
         
+        public static ResultSet executePreparedSQL(PreparedStatement psSql){
+            ResultSet rs = null;
+            if(psSql == null){
+                return rs;
+            }
+            
+            try{
+                connect();
+                rs = psSql.executeQuery();
+            }catch(SQLException ex){
+                System.err.println("SQL Exception with statement: " + psSql);
+                ex.printStackTrace();
+            }finally{
+                closeConnection();
+            }
+            return rs;
+        }
+        
         public static ResultSet executeSQL(String sql) {
             ResultSet rs = null;
             if(sql == null){
@@ -58,6 +76,7 @@ public class DBConnector {
             }
             
             try{
+                connect();
                 PreparedStatement ps = connection.prepareStatement(sql);
                 rs = ps.executeQuery(sql);
             }catch(SQLException ex){

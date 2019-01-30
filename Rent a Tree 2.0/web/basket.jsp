@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF8" pageEncoding="UTF8"%>
-<%@ page import ="model.Product" %>
+<%@ page import ="com.rentatree.model.Product" %>
 <%@ page import ="java.util.ArrayList" %>
-<%@ page import ="util.BasketHandler" %>
 
 <!doctype html>
 <html>
@@ -13,29 +12,24 @@
 </head>
 <body>
 
-
     <%@include file="WEB-INF/jsp/navbar.jsp" %>
     
+    <div class="col-md-10">
+        <h3>Your Shopping Cart:</h3>
+    </div>
     
-        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-          <h1>Basket</h1>
-
-          <section class="row text-center placeholders">
-            What should be shown here? Has anything been added to your basket?
-          </section>
-          In your basket is:
-          <ul>
-          <%
-          ArrayList<Product> products = BasketHandler.getItemsFromBasket();
-          for(Product p : products){
-        	  %>
-        	  <li><%=p.getName() %></li>
-        	  <%
-          }
-          
-          %>
-          </ul>
-		</main>
-
+    <div class="col-sm-2 sidenav">
+        <h5>Some Products We'd Like To Recommend:</h5>
+        <div class="well">
+            <p>Recommended Product</p>
+        </div>
+        <div class="well">
+            <p>Recommended Product</p>
+        </div>
+        <div class="well">
+            <p>Recommended Product</p>
+        </div>
+    </div>
+    
 </body>
 </html>

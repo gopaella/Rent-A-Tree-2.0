@@ -22,17 +22,13 @@ public class ProductHandler {
     }
     
     public static ArrayList<Product> getProducts() throws SQLException {
-        //String st = "SELECT * FROM Product";
-        //ResultSet rs = dbc.executeSQL(st);
-	//return resultSetToProducts(rs);	
-        
-        ArrayList<Product> products = new ArrayList<>();
-        products.add(new Product(0, "Lifelike Synthetic Spruce", "A lifelike synthetic spruce tree made from sustainabe PVC plastic", "Cuba's Trees", "£12.50"));
-        
-        return products;
-        
+        String st = "SELECT * FROM Product";
+        ResultSet rs = dbc.executeSQL(st);
+	return resultSetToProducts(rs);	
     }
 	
+    
+    
     public static ArrayList<Product> resultSetToProducts(ResultSet rs) throws SQLException{
         ArrayList<Product> products = new ArrayList<>();
         while(rs.next()){
