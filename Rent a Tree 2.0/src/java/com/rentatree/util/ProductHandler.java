@@ -15,24 +15,21 @@ import java.util.ArrayList;
  * @author Alan
  */
 public class ProductHandler {
-    //private static DBConnector dbc;
+    private static DBConnector dbc;
     
     public ProductHandler(){
-       // dbc = new DBConnector("admin", "admin", "host");
+       dbc = new DBConnector("SYS AS SYSDBA", "Huskyanna234", "jdbc:oracle:thin:@localhost:1521:orcl");
     }
     
     public static ArrayList<Product> getProducts() throws SQLException{
-        //String st = "SELECT * FROM Tree";
-        //ResultSet rs = dbc.executeSQL(st);
-
-	//return resultSetToProducts(rs);
-        
-        return new ArrayList<>();
-
-        
+        String st = "SELECT * FROM Tree";
+        dbc.connect();
+        ResultSet rs = dbc.executeSQL(st);
+        dbc.closeConnection();
+	return resultSetToProducts(rs); 
     }
 	
-    public static ArrayList<Product> getProductsSortBy(){
+    public static ArrayList<Product> getProductSearch(String minSize, String maxSize) throws SQLException{
         return null;
     }
     public static ArrayList<Product> resultSetToProducts(ResultSet rs){

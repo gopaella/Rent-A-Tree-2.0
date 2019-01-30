@@ -5,30 +5,28 @@
  */
 package com.rentatree.service;
 
+import com.rentatree.model.Product;
+import com.rentatree.util.ProductHandler;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.rentatree.util.ProductHandler;
-import com.rentatree.model.Product;
-import javax.servlet.http.HttpServlet;
-import javax.ws.rs.core.Response;
 
 /**
  *
  * @author cuba
  */
 
-@WebServlet("/Product")
-public class ProductListService extends HttpServlet {
+@WebServlet("/Products/Search")
+public class ProductSearchService extends HttpServlet {
     
-    public ProductListService() {
-    
+    public ProductSearchService() {
+        
     }
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,10 +35,11 @@ public class ProductListService extends HttpServlet {
                 
                 //A bunch of strings
                 String minSize = request.getParameter("minSize");
+                String maxSize = request.getParameter("maxSize");
                 
 		ArrayList<Product> products = new ArrayList<Product>();
 		try {
-			products = ProductHandler.getProducts();
+			products = ProductHandler.getProductSearch(minSize, maxSize);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
@@ -64,5 +63,5 @@ public class ProductListService extends HttpServlet {
 		doGet(request, response);
 	}
     
-        
+    
 }
