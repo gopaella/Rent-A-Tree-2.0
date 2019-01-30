@@ -26,7 +26,7 @@
             <div class="text-center">
                 <p>Size setting</p>
                 
-                <form>
+                <form action="/ProductSearch">
                     <div class="form-group">
                         <label for="minSize">Minimum Tree Size</label>
                         <input type="text" class="form-control" id="minSize" placeholder="50cm">

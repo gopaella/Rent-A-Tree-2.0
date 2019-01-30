@@ -43,6 +43,7 @@ public class ProductListService extends HttpServlet {
                         System.out.println("Something Broke");
 		}
 		
+                
 		
 		// Rather than embed lots of HTML into servlets; place the data you wan tto handle into the request
 		request.setAttribute("products", products);
