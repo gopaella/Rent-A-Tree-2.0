@@ -58,13 +58,10 @@ public class DBConnector {
             }
             
             try{
-                connect();
                 rs = psSql.executeQuery();
             }catch(SQLException ex){
                 System.err.println("SQL Exception with statement: " + psSql);
                 ex.printStackTrace();
-            }finally{
-                closeConnection();
             }
             return rs;
         }
@@ -76,14 +73,11 @@ public class DBConnector {
             }
             
             try{
-                connect();
                 PreparedStatement ps = connection.prepareStatement(sql);
                 return executePreparedSQL(ps);
             }catch(SQLException ex){
                 System.err.println("SQL Exception with statement: " + sql);
                 ex.printStackTrace();
-            }finally{
-                closeConnection();
             }
             return null;
         }

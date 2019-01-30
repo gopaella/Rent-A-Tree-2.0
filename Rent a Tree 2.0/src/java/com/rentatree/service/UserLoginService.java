@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.rentatree.util.DBConnector;
+import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,15 +26,28 @@ import com.rentatree.util.DBConnector;
 
 @WebServlet("/trylogin")
 public class UserLoginService extends HttpServlet {
-    
+    DBConnector dbc = new DBConnector("SYS AS SYSDBA", "GoCo19", "jdbc:oracle:thin:@localhost:1521:orcl");
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         
-        String sql = "SELECT Email, UserPassword FROM Customer WHERE Email = " + email + " AND UserPassword = " + password;
-        
-        
+        String sql = "SELECT Email, UserPassword FROM Customer WHERE Email = '" + email + "' AND UserPassword = '" + password+"'";
+        System.out.println(sql);
+        dbc.registerDriver();
+        dbc.connect();
+        ResultSet rs = dbc.executeSQL(sql);
+       
+        try {
+            rs.next();
+            if(rs.getString("Email").equals(email) && rs.getString("UserPassword").equals(password)) {
+                System.out.println("User Success");
+            } else {
+                System.out.println("User Fail");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserLoginService.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 	/**
